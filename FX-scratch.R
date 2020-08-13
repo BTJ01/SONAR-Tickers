@@ -1,11 +1,11 @@
 #wcon <- sql_connect('w')
 # con <- dbConnect(odbc(),
-#                      Driver = "SQL Server",
-#                      Server = "freightwaves.ctaqnedkuefm.us-east-2.rds.amazonaws.com", # fwstaging.cqceta955cka.us-east-2.rds.amazonaws.com
+#                      Driver = "",
+#                      Server = ""
 #                      Database = "Factset",
-#                      port = 1433,
-#                      UID = sql_un,
-#                      PWD = sql_pw,
+#                      port = ,
+#                      UID = ,
+#                      PWD = ,
 # )
 
 mxdt <- dbGetQuery(scon, 'SELECT TOP 1 data_timestamp FROM staging.dbo.indx_index_data WHERE index_id = 4884 ORDER BY data_timestamp desc')
