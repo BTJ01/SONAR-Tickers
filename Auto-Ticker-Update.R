@@ -26,12 +26,12 @@ sql_connect <- function(database, user = 'fwetl'){
     break
   } else {
     return(odbc::dbConnect(odbc(),
-                           Driver = "SQL Server",
+                           Driver = "",
                            Server = "",
                            Database = db,
                            UID = user,
                            PWD = pass,
-                           Port = 1433))
+                           Port = ))
   }
 }
 scon <- sql_connect('s')
