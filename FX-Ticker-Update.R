@@ -3,12 +3,12 @@
 ## Purpose: Update FX tickers (daily)
 ## Author: Brad Jenkins
 ## Date Created: 2020-01-02
-## Email: BJenkins@FreightWaves.com
+## Email: 
 ##--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 ## Notes: Append new Forex data to 
-##                              Staging.dbo.indx_index_data 
+##                              Staging.dbo.indx_index 
 ##                              from 
-##                              Factset.ref_v2.fx_rates_usd
+##                              Factset.ref_v2.fx_rates
 ##
 ##--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
@@ -31,12 +31,11 @@ sql_connect <- function(database, user = 'fwetl'){
     break
   } else {
     return(odbc::dbConnect(odbc(),
-                           Driver = "SQL Server",
-                           Server = "freightwaves.ctaqnedkuefm.us-east-2.rds.amazonaws.com",
+                           Server = "",
                            Database = db,
                            UID = Sys.getenv("user"),
                            PWD = Sys.getenv("pass"),
-                           Port = 1433))
+                           Port = ))
   }
 }
 
