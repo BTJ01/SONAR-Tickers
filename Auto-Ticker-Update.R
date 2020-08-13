@@ -19,15 +19,15 @@ sql_connect <- function(database, user = 'fwetl'){
                   tolower(database) %in% c('w', 'warehouse', 'ware', 'wh') ~ "Warehouse",
                   tolower(database) %in% c('f','factset','fs') ~ "Factset",
                   tolower(database) %in% c('segment', 'seg', 'user') ~ "Segment")
-  pass <- case_when(user == "fwetl" ~ "d]h4g2G`'<4c&sZ_",
-                    user == "brad_hill" ~ "XXn#v69f3pDRhvNS")
+  pass <- case_when(user == "" ~ "",
+                    user == "" ~ "")
   if(is.na(db)) {
     return('You must choose either Staging, Warehouse, Segment or Factset.')
     break
   } else {
     return(odbc::dbConnect(odbc(),
                            Driver = "SQL Server",
-                           Server = "freightwaves.ctaqnedkuefm.us-east-2.rds.amazonaws.com",
+                           Server = "",
                            Database = db,
                            UID = user,
                            PWD = pass,
